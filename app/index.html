@@ -50,6 +50,15 @@
             
                   ga('create', 'UA-59325548-2', 'auto');
                   ga('send', 'pageview');
+
+                  if('serviceWorker' in navigator){
+                        window.addEventListener('load', function(){
+                              navigator.serviceWorker.register('/sw.js')
+                                    .then(function(){
+                                          console.log('Registered')
+                                    })
+                        })
+                  }
             </script>
       </body>
 
